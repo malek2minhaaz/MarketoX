@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "392516370502",
+    "firebase_url": "https://marketox-java-default-rtdb.firebaseio.com",
+    "project_id": "marketox-java",
+    "storage_bucket": "marketox-java.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:392516370502:android:433db14517ef63c28a8a47",
+        "android_client_info": {
+          "package_name": "com.example.application.marketox"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "392516370502-dth56vs8ocvtb9c2a93joa0vdj2gq0sc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSkxcHS5Z5SxkwUvQd7RQrmaZAcAAQItg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "392516370502-dth56vs8ocvtb9c2a93joa0vdj2gq0sc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- App Logo -->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/logoIv"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logo"
+        android:background="@color/Blue"
+        android:padding="14dp"
+        app:shapeAppearanceOverlay="@style/ImageStyle_Circle" />
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/titleTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logoIv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:text="Create Account"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/subTitleTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titleTv"
+        android:layout_centerHorizontal="true"
+        android:text="Join MarketoX today"
+        android:textColor="@color/white" />
+
+    <!-- Email -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailTil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/subTitleTv"
+        android:layout_marginTop="24dp"
+        app:startIconDrawable="@drawable/ic_email2_white"
+        app:endIconMode="clear_text"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="         Email Address">
+
+        <EditText
+            android:id="@+id/emailEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Password -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordTil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emailTil"
+        android:layout_marginTop="12dp"
+        app:startIconDrawable="@drawable/ic_lock_white"
+        app:endIconMode="password_toggle"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="         Password">
+
+        <EditText
+            android:id="@+id/passwordEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Confirm Password -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cPpasswordTil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/passwordTil"
+        android:layout_marginTop="12dp"
+        app:startIconDrawable="@drawable/ic_lock_white"
+        app:endIconMode="password_toggle"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="         Confirm Password">
+
+        <EditText
+            android:id="@+id/cPpasswordEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Login Link -->
+    <TextView
+        android:id="@+id/haveAccountTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cPpasswordTil"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:text="Already have an account? Login"
+        android:textColor="@color/Blue"
+        android:textStyle="bold" />
+
+    <!-- Register Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/registerBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/haveAccountTv"
+        android:layout_marginTop="24dp"
+        android:text="CREATE ACCOUNT"
+        android:textSize="16sp"
+        android:backgroundTint="@color/Blue"
+        android:elevation="6dp"
+        app:cornerRadius="14dp"
+        app:rippleColor="@color/colorGray02"/>
+</RelativeLayout>

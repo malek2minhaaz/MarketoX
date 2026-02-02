@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MarketoX</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="don_t_have_any_account_register_here">Don\'t Have Any Account ? <b>Register Here</b></string>
+    <string name="already_have_an_account_login_here">Already Have An Account?<b>Login Here</b></string>
+    <string name="didt_sent_otp_resend">Didn\t Sent OTP ?<b> Resend</b></string>
+    <string name="forgot_password"><b>Forgot Password?</b></string>
+</resources>

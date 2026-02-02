@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Profile / Icon -->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/profileIv"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_phone_white"
+        android:background="@color/Blue"
+        android:padding="18dp"
+        app:shapeAppearanceOverlay="@style/ImageStyle_Circle" />
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/loginLabelTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profileIv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:text="Login with Phone"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/subTitleTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/loginLabelTv"
+        android:layout_centerHorizontal="true"
+        android:text="We will send you a verification code"
+        android:textColor="@color/colorGray02" />
+
+    <!-- PHONE INPUT -->
+    <RelativeLayout
+        android:id="@+id/phoneInputRl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/subTitleTv"
+        android:layout_marginTop="24dp"
+        android:visibility="visible">
+
+        <com.hbb20.CountryCodePicker
+            android:id="@+id/phoneCodeTil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="56dp"
+            app:ccp_autoDetectCountry="true"
+            app:ccp_rememberLastSelection="true"
+            app:ccp_showFlag="false"
+            app:ccp_showNameCode="false"
+            app:ccp_contentColor="@color/Blue"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/phoneNumberTil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/phoneCodeTil"
+            android:layout_marginStart="8dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="         Phone Number"
+            app:startIconDrawable="@drawable/ic_phone_white"
+            app:endIconMode="clear_text">
+
+            <EditText
+                android:id="@+id/phoneNumberEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/sendOtpBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/phoneNumberTil"
+            android:layout_marginTop="18dp"
+            android:text="SEND OTP"
+            android:textSize="16sp"
+            android:minHeight="@dimen/m_button_height"
+            android:backgroundTint="@color/Blue"
+            app:cornerRadius="14dp"
+            app:rippleColor="@color/colorGray02"/>
+    </RelativeLayout>
+
+    <!-- OTP INPUT -->
+    <RelativeLayout
+        android:id="@+id/optInputUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/subTitleTv"
+        android:layout_marginTop="24dp"
+        android:visibility="gone">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/otpTil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Enter OTP"
+            app:startIconDrawable="@drawable/ic_lock_white">
+
+            <EditText
+                android:id="@+id/otpEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="6" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/verifyOtpBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/otpTil"
+            android:layout_marginTop="18dp"
+            android:text="VERIFY OTP"
+            android:textSize="16sp"
+            android:minHeight="@dimen/m_button_height"
+            android:backgroundTint="@color/Blue"
+            app:cornerRadius="14dp"/>
+
+        <TextView
+            android:id="@+id/resendOtpTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/verifyOtpBtn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:text="Didn’t receive OTP? Resend"
+            android:textColor="@color/Blue"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+
+</RelativeLayout>
