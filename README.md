@@ -1,0 +1,1 @@
+MarketoX is a feature-rich Android marketplace application that allows users to buy and sell items, manage profiles, and interact with listings. The app leverages Firebase for real-time data management, authentication, and cloud storage.
