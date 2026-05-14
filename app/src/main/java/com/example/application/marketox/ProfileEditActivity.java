@@ -134,7 +134,6 @@ public class ProfileEditActivity extends AppCompatActivity {
                         Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
                         while (!uriTask.isSuccessful()) ;
                         String uploadImageUrl = uriTask.getResult().toString();
-
                         if (uriTask.isSuccessful()) {
                             updateInfoDb(uploadImageUrl);
                         }
@@ -155,7 +154,7 @@ public class ProfileEditActivity extends AppCompatActivity {
         progressDialog.show();
 
         HashMap<String, Object> hashMap = new HashMap<>();
-        // FIX: Removed the extra " " + prefix
+
         hashMap.put("name", name);
         hashMap.put("dob", dob);
 
@@ -194,6 +193,8 @@ public class ProfileEditActivity extends AppCompatActivity {
                 });
     }
 
+
+    // ---------------- LOAD MY INFO ----------------
     private void loadMyinfo() {
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
         ref.child(firebaseAuth.getUid())

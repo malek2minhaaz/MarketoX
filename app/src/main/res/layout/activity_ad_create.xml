@@ -5,12 +5,13 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdCreateActivity">
+    tools:context=".AdCreateActivity"
+    android:fitsSystemWindows="true">
 
     <RelativeLayout
         android:id="@+id/toolBarRl"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/m_button_height">
+        android:layout_height="70dp">
 
         <ImageButton
             android:id="@+id/toolbarBackBtn"
@@ -28,10 +29,11 @@
             android:layout_height="wrap_content"
             android:text="Create Ad"
             style="@style/TextAppearance.MaterialComponents.Body1"
-            android:layout_centerInParent="true"/>
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp" />
 
         <ImageButton
-            android:id="@+id/toolbarAdImageBtn"
+            android:id="@+id/toolbarAddImageBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_add_white2"
@@ -47,14 +49,14 @@
             android:layout_alignParentBottom="true"
             android:background="@color/colorGray02"/>
     </RelativeLayout>
+
     <androidx.core.widget.NestedScrollView
         android:layout_below="@id/toolBarRl"
-        android:layout_above="@id/postAdBtn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:padding="10dp"
-        android:contentDescription="Sroll View">
-        
+        android:contentDescription="Scroll View">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -66,14 +68,14 @@
                 android:layout_height="wrap_content"
                 android:text="Pick Upto 10 Images"/>
 
-
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/imagesRv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/imagesLabelTv"
                 app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
-                app:spanCount="4"/>
+                app:spanCount="4"
+                tools:listitem="@layout/row_images_picked"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/brandTil"
@@ -94,6 +96,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName"/>
             </com.google.android.material.textfield.TextInputLayout>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/categoryTil"
                 android:layout_width="match_parent"
@@ -136,6 +139,7 @@
                     android:contentDescription="Condition"
                     />
             </com.google.android.material.textfield.TextInputLayout>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/locationTil"
                 android:layout_width="match_parent"
@@ -168,7 +172,6 @@
                 app:boxCornerRadiusTopEnd="8dp"
                 app:boxCornerRadiusTopStart="8dp"
                 android:layout_below="@id/locationTil">
-                
                 <EditText
                     android:id="@+id/priceEt"
                     android:layout_width="match_parent"
@@ -176,6 +179,7 @@
                     android:inputType="numberDecimal"/>
             </com.google.android.material.textfield.TextInputLayout>
 
+            <!-- Re-anchored Title below Price -->
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:id="@+id/titleTil"
@@ -211,20 +215,24 @@
                     android:id="@+id/descritpionEt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:minHeight="100dp"
                     android:inputType="textCapSentences|textMultiLine"/>
             </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Post AD Button now below Description -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/postAdBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/descriptionTil"
+                app:cornerRadius="8dp"
+                android:minHeight="@dimen/m_button_height"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="Post AD"
+                android:backgroundTint="@color/Blue"/>
+
         </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/postAdBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        app:cornerRadius="8dp"
-        android:minHeight="@dimen/m_button_height"
-        android:layout_marginTop="10dp"
-        android:text="Post AD"
-        android:backgroundTint="@color/Blue"/>
-
-
 </RelativeLayout>

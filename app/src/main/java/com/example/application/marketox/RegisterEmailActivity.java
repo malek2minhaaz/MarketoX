@@ -135,7 +135,7 @@ public class RegisterEmailActivity extends AppCompatActivity {
                     progressDialog.dismiss();
                     Log.d(TAG, "onSuccess: User saved");
 
-                    startActivity(new Intent(RegisterEmailActivity.this, MainActivity.class));
+                    startActivity(new Intent(RegisterEmailActivity.this, LoginEmailActivity.class));
                     finish();
                 })
                 .addOnFailureListener(e -> {

@@ -35,7 +35,7 @@
         android:layout_below="@id/welcomeTv"
         android:layout_centerHorizontal="true"
         android:text="Login to continue"
-        android:textColor="@color/colorGray02" />
+        android:textColor="@color/colorGray02"/>
 
     <!-- Email -->
     <com.google.android.material.textfield.TextInputLayout
